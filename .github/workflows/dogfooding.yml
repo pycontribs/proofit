@@ -1,0 +1,29 @@
+name: dogfooding
+on:
+  pull_request:
+    types: [opened, labeled, unlabeled, synchronize]
+
+jobs:
+  dogfooding:
+
+    runs-on: ubuntu-latest
+    steps:
+
+      # https://github.com/actions/checkout/issues/217
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0   # fetch entire git history
+
+      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/* # fetch version tags
+
+      - name: Release Drafter
+        uses: release-drafter/release-drafter@v5.11.0
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Verify PR label action
+        uses: ./
+        id: proofit
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
