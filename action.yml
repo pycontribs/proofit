@@ -1,4 +1,4 @@
-name: 'Proof-It'
+name: 'proofit'
 author: 'Sorin Sbarnea'
 description: 'Verify that a PR has right labels before merge.'
 branding:
