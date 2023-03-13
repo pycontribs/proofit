@@ -1,6 +1,6 @@
 # proofit
 
-ProofIt checks presence of specific PR labels in order to assure creation of meaningful release notes andwith and proper use of semantic versioning. 
+ProofIt checks presence of specific PR labels in order to assure creation of meaningful release notes andwith and proper use of semantic versioning.
 
 ProofIt is inspired from tools below and aims to combine their functionality in a single action. We also aim to make it able to load its settings from a single github repository, ones that would apply for the entire organization.
 

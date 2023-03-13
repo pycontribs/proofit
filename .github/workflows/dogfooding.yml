@@ -23,7 +23,7 @@ jobs:
           REQUIRED_LABELS_ANY: "bug,enhancement,feature,deprecated,major,skip-changelog"
           REQUIRED_LABELS_ANY_DESCRIPTION: "Select at least one label: bug,enhancement,feature,deprecated,major,skip-changelog"
           BANNED_LABELS: "banned"
-  
+
       - name: Release Drafter
         uses: release-drafter/release-drafter@v5.11.0
         env:
